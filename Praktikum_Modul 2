@@ -1,0 +1,56 @@
+#Latihan 1
+import math
+NilaiA = int(input("Masukkan bilangan A: "))
+NilaiB = int(input("Masukkan bialngan B: "))
+hasil_pertambahan = NilaiA + NilaiB
+hasil_selisih = NilaiA - NilaiB
+hasil_perkalian = NilaiA * NilaiB
+hasil_sisabagi = NilaiA % NilaiB
+hasil_pembagian = NilaiA / NilaiB
+hasil_log = logNilaiA2= math.log10(NilaiA)
+hasil_pangkat = NilaiA ** NilaiB
+print(f"Hasil pertambahan {NilaiA} + {NilaiB} = {hasil_pertambahan}")
+print(f"Hasil selisih {NilaiA} - {NilaiB} = {hasil_selisih}")
+print(f"Hasil perkalian {NilaiA} * {NilaiB} = {hasil_perkalian}")
+print(f"Hasil sisabagi {NilaiA} % {NilaiB} = {hasil_sisabagi}")
+print(f"Hasil pembagian {NilaiA} / {NilaiB} = {hasil_pembagian}")
+print(f"Hasil log {NilaiA} log {NilaiB} = {hasil_log}")
+print(f"Hasil pangkat {NilaiA} ** {NilaiB} = {hasil_pangkat}")
+
+
+
+latihan 2
+import math
+
+
+def hitung_jarak(lat1, lon1, lat2, lon2):
+    
+    lat1 = math.radians(lat1)
+    lon1 = math.radians(lon1)
+    lat2 = math.radians(lat2)
+    lon2 = math.radians(lon2)
+
+    
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    
+    a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    
+    radius_bumi = 6371
+
+    
+    jarak = radius_bumi * c
+    return jarak
+lat1 = 5
+lon1 = 10
+lat2 = 15
+lon2 = 20
+jarak = hitung_jarak(lat1, lon1, lat2, lon2)
+print("Lintang Kota 1:", lat1)
+print("Bujur Kota 1:", lon1)
+print("Lintang Kota 2:", lat2)
+print("Bujur Kota 2:", lon2)
+print("Jarak antara dua titik tersebut adalah", jarak, "kilometer")
